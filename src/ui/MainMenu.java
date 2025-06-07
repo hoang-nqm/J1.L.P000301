@@ -1,10 +1,21 @@
 package ui;
 
 
+import services.implement.GuestService;
+import services.implement.RoomServices;
+import services.interfaces.IGuestService;
+import services.interfaces.IRoomService;
 import utils.Input;
 
 public class MainMenu {
 
+    IRoomService roomService;
+    IGuestService guestService;
+
+    public MainMenu() {
+        roomService = new RoomServices();
+        guestService = new GuestService();
+    }
 
 
     public void mainMenu() {
@@ -30,13 +41,13 @@ public class MainMenu {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter Customer ID");
+                   roomService.loadRoomFromFile();
                     break;
                 case 2:
-                    System.out.println("Enter Customer ID");
+                    roomService.displayRoomsAvailable();
                     break;
                 case 3:
-                    System.out.println("Enter Customer ID");
+                    guestService.enterInformationGuest();
                     break;
 
                 case 4:

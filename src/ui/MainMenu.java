@@ -33,6 +33,7 @@ public class MainMenu {
             System.out.println("8. Monthly Revenue Report");
             System.out.println("9. Revenue Report by Room Type");
             System.out.println("10. Save Guest Information");
+            System.out.println("11. Display Guest List");
             System.out.println("Orther. Exit");
 
             Input input = new Input();
@@ -69,12 +70,15 @@ public class MainMenu {
                     System.out.println("Enter Customer ID");
                     break;
                 case 10:
-                    System.out.println("Enter Customer ID");
+                   guestService.saveGuestListToFile();
+                    break;
+                case 11:
+                   guestService.displayGuestList();
                     break;
                 default:
                     System.out.println("Goodbye!!!");
             }
-        } while (choice >= 1 && choice <= 8);
+        } while (choice >= 1 && choice <= 11);
 
     }
 }

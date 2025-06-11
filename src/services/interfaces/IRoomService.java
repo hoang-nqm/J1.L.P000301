@@ -9,6 +9,6 @@ public interface IRoomService {
 
     void loadRoomFromFile();
     void displayRoomsAvailable();
-    void displayRoomByDate(List<Room> rooms, LocalDate startDate, int rentalDays);
-
+    boolean displayRoomByDate(List<Room> rooms, LocalDate startDate, int rentalDays);
+    void saveRoomToFile(List<Room> roomList);
 }

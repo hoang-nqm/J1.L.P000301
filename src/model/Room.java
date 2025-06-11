@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Room {
+public class Room implements Serializable {
     private String roomID;
     private String roomName;
     private String roomType;

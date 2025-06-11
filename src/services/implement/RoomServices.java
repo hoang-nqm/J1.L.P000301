@@ -10,9 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoomServices implements IRoomService {
+    private List<Room> listRooms;
 
     public final String roomFilePath ="src/resources/Active_Room_List.txt";
-    private List<Room> listRooms;
+    public final String roomListFilePath ="src/resources/roomList.dat";
+
 
     public RoomServices() {
         listRooms = FileUltils.importRoomData(roomFilePath);
@@ -21,6 +23,7 @@ public class RoomServices implements IRoomService {
     @Override
     public void loadRoomFromFile() {
         FileUltils.importRoomData(roomFilePath);
+        saveRoomToFile(listRooms);
     }
 
     @Override
@@ -42,7 +45,7 @@ public class RoomServices implements IRoomService {
     }
 
     @Override
-    public void displayRoomByDate(List<Room> rooms, LocalDate startDate, int rentalDays) {
+    public boolean displayRoomByDate(List<Room> rooms, LocalDate startDate, int rentalDays) {
         boolean available = false;
          LocalDate checkoutDate = startDate.plusDays(rentalDays);
         System.out.println("Available Rooms from " + startDate + " to " + checkoutDate.minusDays(1) + ":");
@@ -58,7 +61,13 @@ public class RoomServices implements IRoomService {
             }
         }
         if(!available) {
-            System.out.println("Room not found");
+            System.out.println("Room not found hoac la da het phong");
         }
+        return available;
+    }
+
+    @Override
+    public void saveRoomToFile(List<Room> roomList) {
+        FileUltils.saveRoomListToFile(roomList,roomListFilePath);
     }
 }

@@ -4,4 +4,7 @@ public interface IGuestService {
 
 
     void enterInformationGuest();
+    void saveGuestListToFile();
+    void displayGuestList();
+
 }

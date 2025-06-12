@@ -34,6 +34,7 @@ public class MainMenu {
             System.out.println("9. Revenue Report by Room Type");
             System.out.println("10. Save Guest Information");
             System.out.println("11. Display Guest List");
+            System.out.println("12. Booking");
             System.out.println("Orther. Exit");
 
             Input input = new Input();
@@ -50,7 +51,6 @@ public class MainMenu {
                 case 3:
                     guestService.enterInformationGuest();
                     break;
-
                 case 4:
                     System.out.println("Enter Customer ID");
                     break;
@@ -58,13 +58,13 @@ public class MainMenu {
                     System.out.println("Enter Customer ID");
                     break;
                 case 6:
-                    System.out.println("Update order information");
+                   guestService.cancelBookingByNationalID();
                     break;
                 case 7:
                     System.out.println("Enter Customer ID");
                     break;
                 case 8:
-                    System.out.println("Enter Customer ID");
+                    guestService.monthlyRevenueReport();
                     break;
                 case 9:
                     System.out.println("Enter Customer ID");
@@ -75,10 +75,14 @@ public class MainMenu {
                 case 11:
                    guestService.displayGuestList();
                     break;
+                case 12:
+                   guestService.bookingByNationalID();
+                    break;
+
                 default:
                     System.out.println("Goodbye!!!");
             }
-        } while (choice >= 1 && choice <= 11);
+        } while (choice >= 1 && choice <= 12);
 
     }
 }

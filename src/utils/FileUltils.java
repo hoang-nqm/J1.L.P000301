@@ -2,7 +2,6 @@ package utils;
 
 import model.Guest;
 import model.Room;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;

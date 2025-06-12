@@ -7,18 +7,18 @@ public class Guest extends Person implements Serializable {
     private String nationalID;
     private String roomID;
     private int rentalDays;
-private LocalDate startDate;
-private String coTenAntName;
+    private LocalDate startDate;
+    private String coTenAntName;
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
 
-    public Guest(String fullName, LocalDate birthDate, String gender, String phoneNumber, String nationalID, String roomID, int rentalDays, LocalDate startDate, String coTenAntName,LocalDate checkInDate) {
+    public Guest(String fullName, LocalDate birthDate, String gender, String phoneNumber, String nationalID, String roomID, int rentalDays, LocalDate startDate, String coTenAntName, LocalDate checkInDate) {
         super(fullName, birthDate, gender, phoneNumber);
         this.nationalID = nationalID;
         this.roomID = roomID;
         this.rentalDays = rentalDays;
         this.checkInDate = checkInDate;
-        this.checkOutDate= checkInDate.plusDays(rentalDays);
+        this.checkOutDate = checkInDate.plusDays(rentalDays);
         this.startDate = startDate;
         this.coTenAntName = coTenAntName;
     }

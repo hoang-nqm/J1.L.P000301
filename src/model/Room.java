@@ -14,6 +14,8 @@ public class Room implements Serializable {
 
     private List<Guest> guestsStay = new ArrayList<>();// danh sachs khach thue
 
+    // khach thue 2 phong 1 phong r102, r101
+
     public Room(String roomID, String roomName, String roomType, double dailyRate, int capacity, String furnitureDescription) {
         this.roomID = roomID;
         this.roomName = roomName;
